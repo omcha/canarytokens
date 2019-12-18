@@ -208,9 +208,9 @@ class EmailOutputChannel(OutputChannel):
             else:
                 server = smtplib.SMTP(settings.SMTP_SERVER, settings.SMTP_PORT)
                 server.ehlo()
-                server.starttls()
-                server.ehlo()
-                server.login(settings.SMTP_USERNAME, settings.SMTP_PASSWORD)
+                #server.starttls()
+                #server.ehlo()
+                #server.login(settings.SMTP_USERNAME, settings.SMTP_PASSWORD)
                 text = smtpmsg.as_string()            
                 server.sendmail(fromaddr, toaddr, text)
 
